@@ -19,8 +19,8 @@ Book.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         references: { 
-          model: 'authors',
-          key: author_id
+          model: 'author',
+          key: 'author_id'
         }
     },
     publishedDate: {
