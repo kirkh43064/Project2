@@ -1,4 +1,3 @@
-
 //Basic server set up - Add more later
 
 //Dependencies
@@ -28,4 +27,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
