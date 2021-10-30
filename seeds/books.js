@@ -2,13 +2,13 @@ const { Books } = require('../models');
 
 const bookdata = [
     {
-      prodID: '',  
+      id: '',  
       title: '',
       author: '',
-      published: '',
+      publishedDate: '',
       rating: '',
       review: '',
-      isFiction: ''
+      genre: ''
     },
 
 const seedbooks = () => Gallery.bulkCreate(bookdata);

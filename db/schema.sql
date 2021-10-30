@@ -1,3 +1,3 @@
-DROP DATABASE IF EXIST project2_db
+DROP DATABASE IF EXIST review_library_db;
 
-CREATE DATABASE project2_db
+CREATE DATABASE review_library_db;
