@@ -20,7 +20,7 @@ Book.init(
         allowNull: false,
         references: { 
           model: 'authors',
-          key: author_id
+          key: 'author_id'
         }
     },
     publishedDate: {
