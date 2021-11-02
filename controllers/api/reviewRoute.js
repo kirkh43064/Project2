@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const { Book } = require('../Models');
-const { Author } = require('../Models');
+const { Book } = require('../../Models');
+const { Author } = require('../../Models');
 
 router.post('/api/reviews', withAuth, async (req, res) => {
   try {
