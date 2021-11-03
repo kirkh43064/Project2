@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../Models');
 
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
