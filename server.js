@@ -2,7 +2,7 @@
 
 //Dependencies
 const express = require('express');
-const routes = require('./contollers/routes');
+const routes = require('./controllers');
 const sequelize = require('./config/connection');
 //session for authentication
 const session = require("express-session");
