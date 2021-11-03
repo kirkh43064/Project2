@@ -1,4 +1,5 @@
-const { Books } = require('../models');
+const { Book } = require('../Models');
+const sequilize = require('../config/connection');
 
 const bookdata = [
     { 
@@ -122,6 +123,15 @@ const bookdata = [
       genre: ''
     },
 ]
-const seedbooks = () => Gallery.bulkCreate(bookdata);
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
 
+  await Book.bulkCreate(bookdata, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  process.exit(0);
+};
+seedDatabase();
 module.exports = seedbooks;
