@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Author extends Model {}
+class Author extends Model {};
 
 Author.init(
   {

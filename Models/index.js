@@ -1,5 +1,5 @@
-const Author = require('./authors');
-const Book = require('./books');
+const Author = require('./author');
+const Book = require('./book');
 
 Author.hasMany(Book, {foreignKey: 'author_id'});
 Book.belongsTo(Author, {foreignKey: 'author_id'});
