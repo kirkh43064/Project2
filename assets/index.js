@@ -7,11 +7,11 @@ button1.addEventListener("click", function () {
 //button not yet assigned
 const button2 = document.getElementById("button2");
 button2.addEventListener("click", function () {
-  location.href = "./past_meetings.html";
+  location.href = "./index2.html";
 });
  
 //button not yet assigned
 const button3 = document.getElementById("button3");
 button3.addEventListener("click", function () {
-  location.href = "./past_meetings.html";
+  location.href = "./index3.html";
 });
