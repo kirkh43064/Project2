@@ -4,9 +4,9 @@
 const express = require('express');
 const sequelize = require('./config/connection');
 // our Routes and controllers
-const reviewRoutes = require('./controllers/reviewRoute');
-const homepageRoutes = require('./controllers/homepageRoutes');
-const userRoutes = require('./controllers/userRoutes');
+const reviewRoutes = require('./controllers/api/reviewRoute');
+const homepageRoutes = require('./controllers/api/homepageRoutes');
+const userRoutes = require('./controllers/api/userRoutes');
 //session for authentication
 const session = require("express-session");
 
