@@ -2,8 +2,11 @@
 
 //Dependencies
 const express = require('express');
-const routes = require('./controllers');
 const sequelize = require('./config/connection');
+// our Routes and controllers
+const reviewRoutes = require('./controllers/reviewRoute');
+const homepageRoutes = require('./controllers/homepageRoutes');
+const userRoutes = require('./controllers/userRoutes');
 //session for authentication
 const session = require("express-session");
 
@@ -21,7 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // turn on routes
-app.use(routes);
+app.use(reviewRoutes);
+app.use(homepageRoutes);
+app.use(userRoutes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

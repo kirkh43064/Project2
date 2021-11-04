@@ -1,8 +1,9 @@
 const { Book } = require('../Models');
-const sequilize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 const bookdata = [
     { 
+      author_id:1,
       title: 'The Judges List',
       author: 'John Grisham',
       publishedDate: '',
@@ -11,6 +12,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'THE LINCOLN HIGHWAY',
       author: 'Amor Towles',
       publishedDate: '',
@@ -19,6 +21,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'THE WISH',
       author: 'Nicholas Sparks',
       publishedDate: '',
@@ -27,6 +30,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'STATE OF TERROR',
       author: 'Hillary Rodham Clinton',
       publishedDate: '',
@@ -35,6 +39,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'CLOUD CUCKOO LAND',
       author: 'Anthony Doerr',
       publishedDate: '',
@@ -43,6 +48,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'DEAR SANTA',
       author: 'Debbie Macomber',
       publishedDate: '',
@@ -51,6 +57,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'APPLES NEVER FALL',
       author: 'Liane Moriarty',
       publishedDate: '',
@@ -59,6 +66,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'OH WILLIAM!',
       author: 'Elizabeth Strout',
       publishedDate: '',
@@ -67,6 +75,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'THE LAST THING HE TOLD ME',
       author: 'Laura Dave',
       publishedDate: '',
@@ -75,6 +84,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'SILVERVIEW',
       author: 'John Le Carré',
       publishedDate: '',
@@ -83,6 +93,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'BILLY SUMMERS',
       author: 'Stephen King',
       publishedDate: '',
@@ -91,6 +102,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'THE MIDNIGHT LIBRARY',
       author: 'Matt Haig',
       publishedDate: '',
@@ -99,6 +111,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'CROSSROADS',
       author: 'Jonathan Franzen',
       publishedDate: '',
@@ -107,6 +120,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'HARLEM SHUFFLE',
       author: 'Colson Whitehead',
       publishedDate: '',
@@ -115,6 +129,7 @@ const bookdata = [
       genre: ''
     },
     { 
+      author_id:1,
       title: 'THE BUTLER',
       author: 'Danielle Steel',
       publishedDate: '',
@@ -124,7 +139,7 @@ const bookdata = [
     },
 ]
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync();
 
   await Book.bulkCreate(bookdata, {
     individualHooks: true,
@@ -134,4 +149,3 @@ const seedDatabase = async () => {
   process.exit(0);
 };
 seedDatabase();
-module.exports = seedbooks;
