@@ -1,7 +1,7 @@
 //Home button
 const button1 = document.getElementById("button1");
 button1.addEventListener("click", function () {
-  location.href = "./index.html";
+  location.href = "views/homepage.handlebars";
 });
 
 //button not yet assigned
