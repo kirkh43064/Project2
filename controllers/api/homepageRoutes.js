@@ -1,22 +1,29 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
+const User = require('../../Models/user');
 
 // Use withAuth middleware to prevent access to route
 router.get('/', async (req, res) => {
+    console.log('homepage route');
     try {
+      let user;
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: User }],
       });
-  
-      const user = userData.get({ plain: true });
-  
+
+      if (userData) {
+      user = userData.get({ plain: true });
+      }
+
       res.render('homepage', {
         ...user,
-        logged_in: true
+        logged_in: true,
+        layout: false
       });
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   });
