@@ -40,7 +40,7 @@ router.get('api/reviews/:book_id', async (req, res) => {
 router.get('/api/reviews/:author', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
-      const authorData = await Authors.findAll({
+      const authorData = await Author.findAll({
           where: {author_id: req.params.author },
             include: [
             {
@@ -50,7 +50,7 @@ router.get('/api/reviews/:author', async (req, res) => {
       });
   
       // Serialize data so the template can read it
-      const authors = authorData.map((authors) => authors.get({ plain: true }));
+      const author = authorData.map((author) => author.get({ plain: true }));
   
       // Pass serialized data and session flag into template
       res.render('reviewPage', { 
