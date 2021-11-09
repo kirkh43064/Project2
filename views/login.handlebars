@@ -1,5 +1,4 @@
-
- <html>
+<html>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,15 +29,23 @@
 
     <body>
 
-      <div class="glass-panel">
-        <h1><a href="___" target="_blank">Please sign in</a></h1>
-        <div class="glass-toolbar">
-          <button class="glass-button">User Name</button>
-          <a href="___" target="_blank" class="glass-button">Password</a>
-        </div>
-      </div>
-      <footer>
-
+        <main class="form-signin text-center">
+            <form id="login-form">
+              <h1 class="h3 mb-3 fw-normal">Login</h1>
+          
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="username-login" placeholder="Doe246" autofocus="true">
+                <label for="username-login">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password-login" placeholder="Password" autofocus="true">
+                <label for="password-login">Password</label>
+              </div>
+          
+              <button class="w-100 btn btn-lg btn-info mb-3" type="submit">Sign in</button>
+              <a class="login-link" href="/signup">Sign up</a>
+            </form>
+          </main>
 
       </footer>
       <!--JavaScript at end of body for optimized loading-->
@@ -49,3 +56,4 @@
     </body>
   </html>
         
+        <!-- Jacob - updated login/logout--> 
