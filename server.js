@@ -4,7 +4,7 @@
 const express = require('express');
 const sequelize = require('./config/connection');
 // our Routes and controllers
-const reviewRoutes = require('./controllers/api/reviewRoute');
+const reviewRoute = require('./controllers/api/reviewRoute');
 const homepageRoutes = require('./controllers/api/homepageRoutes');
 const userRoutes = require('./controllers/api/userRoutes');
 //session for authentication
@@ -36,13 +36,14 @@ app.use(session(sess));
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+// Handlebars.registerPartial('reviewCard');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('views'))
+app.use(express.static('public'));
 
 // turn on routes
-app.use(reviewRoutes);
+app.use(reviewRoute);
 app.use(homepageRoutes);
 app.use(userRoutes);
 
