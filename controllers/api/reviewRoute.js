@@ -1,11 +1,36 @@
 const router = require('express').Router();
 const withAuth = require('./../utils/auth');
-const { Book } = require('../../Models');
-const { Author } = require('../../Models');
+const { Book, Author, Review } = require('../../Models');
 
-router.post('/api/reviews', withAuth, async (req, res) => {
+router.get('/review', async (req, res) => {
   try {
-    const newReview = await Books.create({
+    console.log('inside /api/review');
+    const allReview = await Review.findAll({
+      // where: {
+      //   book_id: req.params.id,
+      // },
+      include: [
+        {
+          model: Book,
+        },
+      ],
+    });
+
+    const reviews = allReview.map((review) =>
+    review.get({ plain: true })
+    );
+    console.log(reviews);
+    res.render('review', {
+      reviews: reviews,
+    });
+  } catch (err) {
+        res.status(400).json(err);
+  }
+});
+
+router.post('/api/review', withAuth, async (req, res) => {
+  try {
+    const newReview = await Review.create({
         ...req.body,
         rating: req.session.rating,
         review: req.session.review,
@@ -13,6 +38,7 @@ router.post('/api/reviews', withAuth, async (req, res) => {
     });
 
     res.status(200).json(newReview);
+    
   } catch (err) {
         res.status(400).json(err);
   }
@@ -20,7 +46,7 @@ router.post('/api/reviews', withAuth, async (req, res) => {
 
 router.get('api/reviews/:book_id', async (req, res) => {
   try {
-    const bookData = await Book.get({
+    const bookData = await Review.get({
       where: {
         book_id: req.params.id,
       },
@@ -37,7 +63,7 @@ router.get('api/reviews/:book_id', async (req, res) => {
   }
 });
 
-router.get('/api/reviews/:author', async (req, res) => {
+router.get('/api/review/:author', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
       const authorData = await Author.findAll({

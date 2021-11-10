@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
     }
   
     res.render('login');
-  });
+  });  
 
   router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect the request to another route
@@ -45,9 +45,10 @@ router.get('/', async (req, res) => {
       return;
     }
   
-    res.render('signup');
+    res.render('signup', {
+      layout: signup
+    });
   });
-
 
   //sign up page
 
