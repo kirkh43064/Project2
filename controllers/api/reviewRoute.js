@@ -9,21 +9,19 @@ router.get('/review', async (req, res) => {
       // where: {
       //   book_id: req.params.id,
       // },
-      // include: [
-      //   {
-      //     model: Book, Author,
-      //     attributes: ['title', 'last_
-      //     name'],
-      //   },
-      // ],
+      include: [
+        {
+          model: Book,
+        },
+      ],
     });
 
     const reviews = allReview.map((review) =>
     review.get({ plain: true })
     );
-
+    console.log(reviews);
     res.render('review', {
-      reviews,
+      reviews: reviews,
     });
   } catch (err) {
         res.status(400).json(err);

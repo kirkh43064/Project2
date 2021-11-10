@@ -34,7 +34,7 @@
 
 
 body {
-  background: url('background_photos/library_stock3.jpg') no-repeat center center fixed;
+  background: url('../background_photos/library_stock3.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
