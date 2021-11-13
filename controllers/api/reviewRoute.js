@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('./../utils/auth');
-const { Book, Author, Review } = require('../../Models');
+const { Book, Author, Review, User } = require('../../Models');
 
 router.get('/review', async (req, res) => {
   try {
@@ -12,6 +12,7 @@ router.get('/review', async (req, res) => {
       include: [
         {
           model: Book,
+          // model: User,
         },
       ],
     });

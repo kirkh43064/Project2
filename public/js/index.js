@@ -7,7 +7,7 @@ button1.addEventListener("click", function () {
 //button not yet assigned
 const button2 = document.getElementById("button2");
 button2.addEventListener("click", function () {
-  location.href = "./index2.html";
+  location.href = "./review.html";
 });
  
 //button not yet assigned

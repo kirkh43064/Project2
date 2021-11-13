@@ -15,7 +15,7 @@
         />
         <!--Title of project-->
         <title>Book Reviews</title>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
       </head>
 
       <nav>
@@ -30,28 +30,30 @@
 
     <body>
 
-      <div class="row">
-        <form class="col s12">
+      <form class="col s12 l6">
+        <div class="input-field col s6">
           <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">mode_edit</i>
-              <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-              <label for="icon_prefix2">Review</label>
+            <div class="col s6">
+            Book Title:
+              <div class="input-field inline">
+                <input id="title_inline" type="text" class="validate">
+                <label for="title_inline">Book Title</label>
+              </div>
             </div>
           </div>
-        </form>
-      </div>
 
-      <div class="row">
-        <form class="col s12">
           <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i>
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
-            <label for="textarea1">Textarea</label>
-            </button>
+            <i class="material-icons prefix">mode_edit</i>
+            <input id="myReview" type="text" class="validate">
+            <label for="name">Review</label>
           </div>
-        </form>
-      </div>
+
+          <div class="input-field col s6">
+            <button class="btn waves-effect waves-light" type="submit" id="review" name="review">Submit</button>
+          </div>
+          </div>
+      </form>
+
 
    {{{ body }}}
 
