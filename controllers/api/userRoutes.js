@@ -7,7 +7,6 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: User }],
     });
 
     const user = userData.get({ plain: true });
@@ -37,8 +36,10 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+  console.log ('inside login')
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    console.log(req.body)
+    const userData = await User.findOne({ where: { email: req.body.username } });
 
     if (!userData) {
       res
@@ -64,6 +65,7 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
