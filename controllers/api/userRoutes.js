@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../../Models');
 const withAuth = require('../utils/auth');
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
