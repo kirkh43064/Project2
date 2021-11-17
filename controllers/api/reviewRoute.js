@@ -44,7 +44,7 @@ router.post('/api/review', withAuth, async (req, res) => {
   }
 });
 
-router.get('api/reviews/:book_id', async (req, res) => {
+router.get('/api/reviews/:book_id', async (req, res) => {
   try {
     const bookData = await Review.get({
       where: {
